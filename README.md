@@ -8,12 +8,19 @@
 #### Experiment recording (Fluorometer)
 1. Make routine for LED blinking (lol)
 2. Read color data to color sensor   
-
+#### Altimeter 
+1. Record data
+2. Store data
+3. Use altimeter to correlate second injection 
 
 #### Open source Software: 
 ##### PWM fan pico 
 https://github.com/tjko/fanpico
 ##### Fluorometer 
 https://github.com/traulab/DIYNAFLUOR?tab=readme-ov-file
+
+### Testing 
+While you may not always have access to the PICO you can still write code using emulators!
+Wokwi has a good emulator for the PICO
 
 
