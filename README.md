@@ -23,6 +23,5 @@ https://github.com/traulab/DIYNAFLUOR?tab=readme-ov-file
 While you may not always have access to the PICO you can still write code using emulators!
 Wokwi has a good emulator for the PICO
 
-
 ### VS Code set up 
 If developing in vsCode (recommended). Download the Raspberry Pi Pico extension, and after pulling CMake files into your project it should work. Might have some issues with windows, so drop a message in slack if there are any issues.
