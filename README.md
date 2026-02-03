@@ -6,7 +6,7 @@
 3. Connect Sampling and data logging rate using the RTC
 4. Using steps 1 2 and 3 for the PWM fan temperature control system
 #### Experiment recording (Fluorometer)
-1. Make routine for LED blinking (lol)
+1. Make routine for LED blinking 
 2. Read color data to color sensor   
 #### Altimeter 
 1. Record data
@@ -24,4 +24,5 @@ While you may not always have access to the PICO you can still write code using 
 Wokwi has a good emulator for the PICO
 
 ### VS Code set up 
+
 If developing in vsCode (recommended). Download the Raspberry Pi Pico extension, and after pulling CMake files into your project it should work. Might have some issues with windows, so drop a message in slack if there are any issues.
