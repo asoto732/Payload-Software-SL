@@ -9,12 +9,27 @@
 #include <util/crc16.h>
 #endif
 
-#if ARDUINO >= 100
+#ifndef __has_include
+  #define __has_include(x) 0
+#endif
+
+#if __has_include(<Arduino.h>)
 #include <Arduino.h>       // for delayMicroseconds, digitalPinToBitMask, etc
 #else
-#include "WProgram.h"      // for delayMicroseconds
-#include "pins_arduino.h"  // for digitalPinToBitMask, etc
+// Minimal Arduino compatibility for non-Arduino build systems (silence IDE/include errors)
+#include <stddef.h>
+
+// Provide delayMicroseconds for build tools; these are no-ops outside Arduino.
+static inline void delayMicroseconds(unsigned int) { (void)0; }
+
+// Minimal GPIO-related macros to allow compilation of headers that reference them.
+#define digitalPinToBitMask(PIN) ( (uint8_t)1 )
+#define digitalPinToPort(PIN) ( (void*)0 )
+#define portInputRegister(PORT) ( (volatile uint8_t*)0 )
+#define digitalWrite(PIN, VAL) (void)0
+#define pinMode(PIN, MODE) (void)0
 #endif
+
 
 // You can exclude certain features from OneWire.  In theory, this
 // might save some space.  In practice, the compiler automatically

@@ -28,6 +28,19 @@ project(SwampLaunchPayload C CXX ASM)
 # Init SDK
 pico_sdk_init()
 
+# --- OneWire library ---
+add_library(onewire
+    ${CMAKE_CURRENT_LIST_DIR}/lib/OneWire/OneWire.cpp
+)
+
+target_include_directories(onewire PUBLIC
+    ${CMAKE_CURRENT_LIST_DIR}/lib/OneWire
+)
+
+target_link_libraries(onewire
+    pico_stdlib
+)
+
 # Add the FatFs_SPI library from the no-OS-FatFS repo
 add_subdirectory(
     ${CMAKE_CURRENT_LIST_DIR}/lib/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI

@@ -19,6 +19,7 @@ target_link_libraries(${NAME}
     hardware_watchdog
     hardware_clocks
     FatFs_SPI        # <- from the add_subdirectory in the top-level CMake
+    onewire
 )
 
 # Optional UART/USB config
